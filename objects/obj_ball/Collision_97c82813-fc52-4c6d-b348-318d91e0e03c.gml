@@ -1,7 +1,8 @@
 /// @description Bounce off walls randomly
 
-speed /= 2;
-direction += random(5);
+direction += random_range(100, 275);
+
+hit = true;
 
 //TODO sort this shit out so it...
 	// - Hits a wall
