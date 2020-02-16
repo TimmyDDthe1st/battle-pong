@@ -1,7 +1,6 @@
 /// @description Init
 
-globalvar hit;
-speed = 10;
+speed = 20;
 isFired = true;
 
 hit = false;
