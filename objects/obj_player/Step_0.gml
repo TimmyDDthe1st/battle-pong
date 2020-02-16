@@ -1,22 +1,17 @@
 /// @description Movement,Fireing
 
 //L stick movement
-if gamepad_axis_value(0,gp_axislv) >= -gamePadDeadZone && gamepad_axis_value(0,gp_axislv) <= gamePadDeadZone 
+if gamepad_axis_value(0,gp_axislv) >= -gamePadDeadZone && gamepad_axis_value(0,gp_axislv) <= gamePadDeadZone
 && gamepad_axis_value(0,gp_axislh) >= -gamePadDeadZone && gamepad_axis_value(0,gp_axislh) <= gamePadDeadZone
 {
 	motion_set(0, 0);
 }
 else
 {
-
 	hlaxis = gamepad_axis_value(0, gp_axislh);
 	vlaxis = gamepad_axis_value(0, gp_axislv);
-	
-	motion_set(point_direction(0, 0, hlaxis, vlaxis), point_distance(0 ,0, hlaxis, vlaxis) * moveSpeed);
-	
-	
-
-
+	direction = point_direction(0, 0, hlaxis, vlaxis);
+	move_contact_solid(direction,moveSpeed);
 }
 
 
